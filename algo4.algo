@@ -1,0 +1,37 @@
+PROCEDURE tableau (arr,n)
+VAR 
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        read(arr[i]);
+    END_FOR
+END
+
+PROCEDURE insertion_sort(arr: ARRAY_OF INTEGER,n:INTEGER)
+VAR
+    i,j:integer;
+BEGIN
+    FOR i FROM 1 TO n-1  DO
+        val=arr[i];
+        j=i-1;
+        WHILE (j>0 and arr[j]>val) DO
+            arr[j+1]=arr[j];
+            j:=j-1;
+        END_WHILE
+        arr[j+1]:=val;
+    END_FOR
+END
+
+
+
+ALGORITHM insert
+VAR
+    arr: ARRAY_OF INTEGER;
+    n:INTEGER;
+BEGIN
+    WRITE ("taper longueur tableau ");
+    Read(n);
+    tableau (arr,n)
+    insertion_sort(arr,n)
+
+END
